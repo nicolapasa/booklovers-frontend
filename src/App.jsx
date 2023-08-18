@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import AddBook from './pages/AddBook';
 import IsPrivate from './components/IsPrivate';
+import DetailsBook from './pages/DetailsBook';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
           <AddBook/>
         </IsPrivate>
         }/>
+     <Route path='/bookDetails/:id'   element={<DetailsBook/>}/>
       </Routes>
       </div>
     </>

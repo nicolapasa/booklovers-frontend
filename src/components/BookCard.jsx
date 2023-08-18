@@ -12,7 +12,7 @@ const BookCard = ({book}) => {
     <h3>{book.title}</h3>
     <h4>{book.author}</h4>
     <div className="socialContainer">
-   <button className="buttonIcon"> <FontAwesomeIcon icon={faHeart}  /></button>    <Link className="link" to={'DetailsBook.jsx'}>Details</Link>
+   <button className="buttonIcon"> <FontAwesomeIcon icon={faHeart}  /></button>    <Link className="link" to={`/bookDetails/${book._id}`}>Details</Link>
     </div>
    
 
