@@ -3,9 +3,10 @@ import BookCard from "../components/BookCard"
 import SearchBar from "../components/SearchBar"
 import { useEffect, useState } from "react"
 import url from "../config";
+import {useNavigate } from "react-router-dom";
 
 const HomePage = () => {
-
+  const navigate=useNavigate()
   const [books, setBooks] = useState([])
   const [searchString, setSearchString] = useState('')
 
@@ -37,7 +38,20 @@ useEffect(() => {
 if(searchString!='')  getSearch()
 }, [searchString])
 
+
+const handleLikeButton=async (bookId, userid)=>{
+    
+  const response=await axios.post(`${url.URL_BASE}/api/book/like/${bookId}`, {userid})
+    
+  window.location.reload(false);
+
+}
   
+
+ if(!books){
+  return ( 'loading' )
+ }
+else{
   return (
     <>
        <SearchBar setSearchString={setSearchString} />
@@ -50,7 +64,7 @@ if(searchString!='')  getSearch()
 
           return(
             <>
-                    <BookCard key={book._id} book={book} />
+                    <BookCard  book={book} handleLikeButton={handleLikeButton} />
             </>
           )
          })
@@ -63,5 +77,5 @@ if(searchString!='')  getSearch()
     </>
   )
 }
-
+}
 export default HomePage

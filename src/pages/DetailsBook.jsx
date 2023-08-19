@@ -4,7 +4,6 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 import url from "../config";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faHeart,
     faEdit,
     faTrash,
     faSpinner
@@ -12,15 +11,17 @@ import {
   import { AuthContext } from "../context/auth.context";
 
 
+
 const DetailsBook = () => {
     const navigate=useNavigate()
     const {  user } = useContext(AuthContext);
+    console.log(user)
  const {id}  = useParams('id')
 
 
  const [book, setBook] = useState('')
 
-
+ const [likes, setLikes] = useState([])
 
 const getBook=async()=>{
 
@@ -34,6 +35,9 @@ useEffect(() => {
 
     getBook()
 }, [id])
+
+
+
 
 
 
@@ -58,10 +62,14 @@ if (!book) {
      <img src={book.image} alt="" />
     <h3>{book.title}</h3>
     <h4>{book.author}</h4>
-    <div className="socialContainer">   <button className="buttonIcon"> <FontAwesomeIcon icon={faHeart}  /></button>
+    <div className="socialContainer">   
+   
+ 
+   
     {
         user._id === book.owner &&    
         <>
+
         <Link className="buttonIcon" to={`/editBook/${book._id}`}> <FontAwesomeIcon icon={faEdit} /></Link>  
           <button className="buttonIcon"> <FontAwesomeIcon icon={faTrash}  onClick={()=>handleDelete(book._id)} /></button>  
           </>

@@ -188,8 +188,11 @@ body {
   border-radius: var(--radius-sm);
   padding: 0.5rem;
   cursor: pointer;
+  position: relative;
 }
-
+.buttonIcon:hover{
+  background-color: var(--darkest); 
+}
 .link{
   background-color: var(--dark);
   color: var(--lighter);
@@ -198,12 +201,24 @@ body {
   padding: 0.5rem;
   cursor: pointer;
 }
-
+.link:hover{
+  background-color: var(--darkest); 
+}
 .socialContainer{
   display: flex;
   margin-top: 1rem;
   gap: 1rem;
 }
+
+.buttonIcon span{
+  background-color: 
+  rgb(152, 103, 124);
+  position: absolute;
+  padding: 0.25rem 0.5rem;
+  border-radius: 50%;
+  top:0;
+}
+
 
 @media screen and (min-width: 481px) 
 
