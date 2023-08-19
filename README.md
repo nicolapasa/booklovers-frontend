@@ -1,8 +1,8 @@
 # BookLovers Frontend
 
-# make with vite + react
+## vite + react
 
-# server with express.js
+## server: express.js
 
 
  url https://incandescent-clafoutis-28610e.netlify.app/

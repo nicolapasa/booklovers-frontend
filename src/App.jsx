@@ -10,6 +10,7 @@ import Signup from './pages/Signup';
 import AddBook from './pages/AddBook';
 import IsPrivate from './components/IsPrivate';
 import DetailsBook from './pages/DetailsBook';
+import EditBook from './pages/EditBook';
 
 function App() {
 
@@ -30,6 +31,11 @@ function App() {
         <Route path='/addBook'   element={
         <IsPrivate>
           <AddBook/>
+        </IsPrivate>
+        }/>
+          <Route path='/editBook/:id'   element={
+        <IsPrivate>
+          <EditBook/>
         </IsPrivate>
         }/>
      <Route path='/bookDetails/:id'   element={<DetailsBook/>}/>

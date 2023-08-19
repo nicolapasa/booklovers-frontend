@@ -25,6 +25,7 @@
 h1,h2,h3,h4,h5,h6{
   font-family: 'Lora', serif;
   color: var(--darkest);
+  text-transform: capitalize;
 }
 body {
   background-color: var(--darkest);
@@ -92,6 +93,9 @@ body {
   padding: 1rem;
   gap: 1rem;
 }
+.content img{
+  display: none;
+}
 .content-page{
   max-width: 480px;
   border-radius: var(--radius)  ;
@@ -105,7 +109,21 @@ body {
   padding: 1rem;
   gap: 1rem;
 }
-
+.left{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.right{
+  padding: 1rem;
+ 
+}
+.right p{
+  text-transform: initial;
+}
 .right img{
 
  width: 100%;
@@ -205,8 +223,14 @@ body {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: start;
   }
-  
+  .content img{
+   width: 300px;
+    display: block;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
   .search{
     max-width: 900px;
   }
@@ -219,11 +243,12 @@ body {
     gap: 1rem;
   }
   .left{
-    width: 100%;
+   
+
   }
   .right{
    
-   background-position: center;
+
   }
 
 }

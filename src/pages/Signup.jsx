@@ -48,6 +48,7 @@ try {
         <p>{errorMessage && errorMessage}</p>
       </div>
       <div>
+      <img src="/images/bg.png"  />
         <p>
           Already registered? <Link to={"/login"}>Login</Link>
         </p>
