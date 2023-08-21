@@ -41,6 +41,20 @@ const handleUpload=async(e)=>{
     }
 }        
 
+const handleRemoveFavorite=async(id, userid)=>{
+
+    const response=await axios.post(`${url.URL_BASE}/api/book/like/${id}`, {userid})
+    console.log(response)
+    window.location.reload(false);
+  
+
+
+}
+
+
+
+
+
   return (
     <>
     <div className="content-page">
@@ -73,7 +87,7 @@ const handleUpload=async(e)=>{
             <img src={book.book.image} alt="" />  
              <h4>{book.book.author}</h4>
 
-             <button className="link">Remove from favorites</button>
+             <button className="link" onClick={()=>handleRemoveFavorite(book.book._id, user._id)} >Remove from favorites</button>
                 </div>    
          
             </>
