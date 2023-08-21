@@ -11,6 +11,7 @@ import AddBook from './pages/AddBook';
 import IsPrivate from './components/IsPrivate';
 import DetailsBook from './pages/DetailsBook';
 import EditBook from './pages/EditBook';
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
 
@@ -31,6 +32,11 @@ function App() {
         <Route path='/addBook'   element={
         <IsPrivate>
           <AddBook/>
+        </IsPrivate>
+        }/>
+          <Route path='/profile'   element={
+        <IsPrivate>
+          <ProfilePage/>
         </IsPrivate>
         }/>
           <Route path='/editBook/:id'   element={
