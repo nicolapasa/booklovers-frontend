@@ -53,7 +53,7 @@ try {
             <p>{errorMessage && errorMessage}</p>
           </div>
           <div>
-            <img src="/images/bg.png"  />
+            <img src="/images/bg4.png"  />
             <p>
               Not registered? <Link className="link" to={"/signup"}>Sign Up</Link>
             </p>

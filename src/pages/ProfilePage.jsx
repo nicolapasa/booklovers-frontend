@@ -85,7 +85,7 @@ const handleRemoveFavorite=async(id, userid)=>{
             <div className="bookThumbnail">
             <h4>{book.book.title}</h4>
             <img src={book.book.image} alt="" />  
-             <h4>{book.book.author}</h4>
+             <h5>{book.book.author}</h5>
 
              <button className="link" onClick={()=>handleRemoveFavorite(book.book._id, user._id)} >Remove from favorites</button>
                 </div>    
